@@ -1,19 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const {getTickets} = require('../controllers/ticketController')
+const {
+  getTickets,
+  setTickets,
+  updateTicket,
+  deleteTickets
+} = require('../controllers/ticketController')
 
-router.get('/', (getTickets))
+router.route('/').get(getTickets).post(setTickets)
+router.route('/:id').put(updateTicket).delete(deleteTickets)
 
-router.post('/', (req, res) => {
-  res.status(200).json({ message: 'Set tickets' })
-})
-
-router.put('/:id', (req, res) => {
-  res.status(200).json({ message: `Update ticket ${req.params.id}` })
-})
-
-router.get('/:id', (req, res) => {
-  res.status(200).json({ message: `Delete ticket ${req.params.id}` })
-})
 
 module.exports = router
