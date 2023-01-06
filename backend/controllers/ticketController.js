@@ -26,7 +26,7 @@ const updateTicket = asyncHandler(async (req, res) => {
 // @route   DELETE /api/tickets/:id
 const deleteTicket = asyncHandler(async (req, res) => {
   res.status(200).json({ message: `Delete ticket ${req.params.id}` })
-})
+}) 
 
 
 module.exports = {
