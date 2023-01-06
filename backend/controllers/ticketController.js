@@ -7,6 +7,10 @@ const getTickets = (req, res) => {
 // @desc    Set tickets
 // @route   POST /api/tickets
 const setTickets = (req, res) => {
+  if(!req.body.text){
+    res.status(400)
+    throw new Error('Please add a text field')
+  }
   res.status(200).json({ message: 'Set tickets' })
 }
 
@@ -18,7 +22,7 @@ const updateTicket = (req, res) => {
 
 // @desc    Delete tickets
 // @route   DELETE /api/tickets/:id
-const deleteTickets = (req, res) => {
+const deleteTicket = (req, res) => {
   res.status(200).json({ message: `Delete ticket ${req.params.id}` })
 }
 
@@ -27,5 +31,5 @@ module.exports = {
   getTickets,
   setTickets,
   updateTicket,
-  deleteTickets,
+  deleteTicket,
 }
