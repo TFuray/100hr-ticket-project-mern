@@ -7,8 +7,10 @@ const {
   deleteTicket
 } = require('../controllers/ticketController')
 
-router.route('/').get(getTickets).post(setTickets)
-router.route('/:id').put(updateTicket).delete(deleteTicket)
+const {protect} = require('../middleware/authMiddleware')
+
+router.route('/').get(protect, getTickets).post(protect, setTickets)
+router.route('/:id').put(protect, updateTicket).delete(protect, deleteTicket)
 
 
 module.exports = router
