@@ -14,9 +14,12 @@ const Dashboard = () => {
   }, [user, navigate])
 
   return (
-    <div>
-     <h3>Dashboard</h3> 
-    </div>
+    <>
+      <section className="heading">
+        <h1>Welcome {user && user.name}</h1> 
+        <p>Tickets Dashboard</p>
+        </section> 
+    </>
   )
 }
 
