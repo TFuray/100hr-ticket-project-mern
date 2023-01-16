@@ -6,10 +6,32 @@ const ticketSchema = mongoose.Schema({
     required: true,
     ref: 'User',
   },
-  text: {
+  title: {
     type: String,
-    required: [true, "Please add text value"]
-  }
+    required: [true, "Please add Title"]
+  },
+  description: {
+    type: String,
+    required: [true, "Pleae add Description"]
+  },
+  project: {
+    type: String,
+  },
+  assignedTo: {
+    type: String,
+    required: [true, "Anyone"],
+    default: 'Anyone'
+  },
+  Priority: {
+    type: String 
+  },
+  Status: {
+    type: Boolean
+  },
+  Type: {
+  type: String
+  },
+
 }, {
   timestamps: true
 })
