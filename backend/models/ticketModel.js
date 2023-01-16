@@ -22,13 +22,14 @@ const ticketSchema = mongoose.Schema({
     required: [true, "Anyone"],
     default: 'Anyone'
   },
-  Priority: {
+  priority: {
     type: String 
   },
-  Status: {
-    type: Boolean
+  status: {
+    type: String,
+    default: "Open"
   },
-  Type: {
+  type: {
   type: String
   },
 

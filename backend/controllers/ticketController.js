@@ -13,14 +13,20 @@ const getTickets = asyncHandler(async (req, res) => {
 // @desc    Set tickets
 // @route   POST /api/tickets
 const setTickets = asyncHandler(async (req, res) => {
-  if (!req.body.text) {
+  if (!req.body.title || !req.body.description) {
     res.status(400)
-    throw new Error('Please add a text field')
+
+    throw new Error('Please add Title and Descriptoin')
   }
 
   const ticket = await Ticket.create({
-    text: req.body.text,
-    user: req.user.id
+    user: req.user.id,
+    assignedTo: req.body.assignedTo,
+    description: req.body.description,
+    priority: req.body.priority,
+    project: req.body.project,
+    title: req.body.title,
+    type: req.body.type
   })
 
   res.status(200).json(ticket)
@@ -35,7 +41,6 @@ const updateTicket = asyncHandler(async (req, res) => {
     res.status(400)
     throw new Error('Ticket not found')
   }
-
 
   //check for user
   if (!user) {
@@ -67,7 +72,6 @@ const deleteTicket = asyncHandler(async (req, res) => {
     res.status(400)
     throw new Error('Ticket not found')
   }
-
 
   //check for user
   if (!req.user) {
