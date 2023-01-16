@@ -43,7 +43,7 @@ const updateTicket = asyncHandler(async (req, res) => {
   }
 
   //check for user
-  if (!user) {
+  if (!req.user) {
     res.status(401)
     throw new Error('User not found')
   }
