@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import TicketForm from '../components/TicketForm'
 import TicketItem from '../components/TicketItem'
+import AddButton from '../components/AddButton'
 import Spinner from '../components/Spinner'
 import { getTickets, reset } from '../features/tickets/ticketSlice'
 
@@ -15,6 +16,8 @@ const Dashboard = () => {
   const { tickets, isLoading, isError, message } = useSelector(
     state => state.tickets
   )
+
+  const [showTicketForm, setShowTicketForm] = useState(false)
 
   useEffect(() => {
     if (isError) {
@@ -39,9 +42,14 @@ const Dashboard = () => {
       <section className='heading'>
         <h1>Welcome {user && user.name}</h1>
         <p>Tickets Dashboard</p>
+        <AddButton
+          color={showTicketForm ? 'red' : 'green'}
+          text={showTicketForm ? 'Close' : 'Add Ticket'}
+          onClick={() => setShowTicketForm(!showTicketForm)}
+          />
       </section>
 
-      <TicketForm />
+      {showTicketForm && <TicketForm />}
 
       <section className='content'>
         <h2>Open Tickets: All</h2>

@@ -28,8 +28,9 @@ const TicketForm = () => {
 
   return (
     <section className='form'>
+      <h2 className='form'>New Ticket</h2>
       <form onSubmit={onSubmit}>
-        <div className='form-group'>
+        <div className='form-group title'>
           <label htmlFor='title'>Title</label>
           <input
             type='text'
@@ -40,7 +41,7 @@ const TicketForm = () => {
           />
         </div>
 
-        <div className='form-group'>
+        <div className='form-group description'>
           <label htmlFor='description'>Description</label>
           <input
             type='text'
@@ -51,7 +52,7 @@ const TicketForm = () => {
           />
         </div>
 
-        <div className='form-group'>
+        <div className='form-group project'>
           <label htmlFor='project'>Project</label>
           <input
             type='text'
@@ -62,18 +63,7 @@ const TicketForm = () => {
           />
         </div>
 
-        {/* <div className='form-group'>
-          <label htmlFor='assignedTo'>Assigned To</label>
-          <input
-            type='text'
-            name='assignedTo'
-            id='assignedTo'
-            value={assignedTo}
-            onChange={e => setAssignedTo(e.target.value)}
-          />
-        </div> */}
-
-        <div className='form-group'>
+        <div className='form-group assigned'>
           <label htmlFor='assignedTo'>Assigned To</label>
           <input
             type='text'
@@ -84,16 +74,20 @@ const TicketForm = () => {
           />
         </div>
 
-        <div className='form-group'>
+        <div className='form-group priority'>
           <label htmlFor='priority'>Priority</label>
-          <select onChange={e => setPriority(e.target.value)} name='priority' id='priority'>
+          <select
+            onChange={e => setPriority(e.target.value)}
+            name='priority'
+            id='priority'
+          >
             <option value='low'>Low</option>
             <option value='medium'>Medium</option>
             <option value='high'>High</option>
           </select>
         </div>
 
-        <div className='form-group'>
+        <div className='form-group type'>
           <label htmlFor='type'>Type</label>
           <input
             type='text'

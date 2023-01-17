@@ -213,3 +213,22 @@ h3 {
     font-size: 1.5rem;
   }
 }
+
+.btn.add {
+  margin-left: 70%;
+}
+
+ /* Form  */
+
+ section.form {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .form-group {
+  display: flex;
+ }
+
+ .form.title {
+  flex
+ }
