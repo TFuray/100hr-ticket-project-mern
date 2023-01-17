@@ -13,6 +13,13 @@ const register = async (userData) => {
   return response.data
 }
 
+// Get all users
+const getUsers = async userData => {
+  const response = await axios.post(API_URL, userData)
+
+  return response.data
+}
+
 //Login user
 const login= async userData => {
   const response = await axios.post(API_URL + 'login', userData)
@@ -33,7 +40,8 @@ const logout = () => {
 const authService = {
   register,
   logout,
-  login
+  login,
+  getUsers
 }
 
 

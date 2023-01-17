@@ -1,4 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
 
 * {
   margin: 0;
@@ -217,18 +235,21 @@ h3 {
 .btn.add {
   margin-left: 70%;
 }
+/* 
+ Form  */
 
- /* Form  */
-
- section.form {
-  display: flex;
-  flex-direction: column;
+ textarea {
+  width: fit-content;
+  height: 111px;
  }
 
- .form-group {
-  display: flex;
+
+
+ div.form-group{
+  margin-bottom: 0;
  }
 
- .form.title {
-  flex
+ label{
+  position: absolute;
+  left: 999999px;
  }
