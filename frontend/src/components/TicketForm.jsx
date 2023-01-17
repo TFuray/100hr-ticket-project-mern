@@ -62,6 +62,17 @@ const TicketForm = () => {
           />
         </div>
 
+        {/* <div className='form-group'>
+          <label htmlFor='assignedTo'>Assigned To</label>
+          <input
+            type='text'
+            name='assignedTo'
+            id='assignedTo'
+            value={assignedTo}
+            onChange={e => setAssignedTo(e.target.value)}
+          />
+        </div> */}
+
         <div className='form-group'>
           <label htmlFor='assignedTo'>Assigned To</label>
           <input
@@ -75,18 +86,11 @@ const TicketForm = () => {
 
         <div className='form-group'>
           <label htmlFor='priority'>Priority</label>
-          <select name='priority' id='priority'>
+          <select onChange={e => setPriority(e.target.value)} name='priority' id='priority'>
             <option value='low'>Low</option>
             <option value='medium'>Medium</option>
             <option value='high'>High</option>
           </select>
-          {/* <input
-            type='text'
-            name='priority'
-            id='priority'
-            value={priority}
-            onChange={e => setPriority(e.target.value)}
-          /> */}
         </div>
 
         <div className='form-group'>

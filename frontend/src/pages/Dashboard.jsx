@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import TicketForm from '../components/TicketForm'
+import TicketItem from '../components/TicketItem'
 import Spinner from '../components/Spinner'
 import { getTickets, reset } from '../features/tickets/ticketSlice'
 
@@ -41,6 +42,17 @@ const Dashboard = () => {
       </section>
 
       <TicketForm />
+
+      <section className='content'>
+        <h2>Open Tickets: All</h2>
+        {tickets.length > 0 ? (
+          <div className="goals">
+            {tickets.map((ticket) => (
+              <TicketItem key={ticket._id} ticket={ticket} />
+            ))}
+         </div>
+        ) : (<h3>No Open Tickets</h3>)}
+      </section>
     </>
   )
 }
