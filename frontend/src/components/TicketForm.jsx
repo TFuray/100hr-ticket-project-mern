@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch, } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { createTicket } from '../features/tickets/ticketSlice'
 
 const TicketForm = () => {
@@ -11,8 +11,6 @@ const TicketForm = () => {
   const [type, setType] = useState('')
 
   const dispatch = useDispatch()
-
-
 
   const onSubmit = e => {
     e.preventDefault()
@@ -82,7 +80,7 @@ const TicketForm = () => {
           />
         </div>
 
-        <div className='form-group assigned'>
+        {/* <div className='form-group assigned'>
           <label htmlFor='assignedTo'>Assigned To</label>
           <select
             onChange={e => setPriority(e.target.value)}
@@ -91,18 +89,17 @@ const TicketForm = () => {
           >
             <option value='' disabled selected>
              Assigned To 
-            </option>
-            {/* {user.map((user) => ( 
+            </option> */}
+        {/* {user.map((user) => ( 
               <option value={user.name}>{user.name}</option>
             ))}  */}
-            <option value='low'>Low</option>
+        {/* <option value='low'>Low</option>
             <option value='medium'>Medium</option>
             <option value='high'>High</option>
           </select>
-        </div>
+        </div> */}
 
-
-        {/* <div className='form-group assigned'>
+        <div className='form-group assigned'>
           <label htmlFor='assignedTo'>Assigned To</label>
           <input
             type='text'
@@ -112,8 +109,7 @@ const TicketForm = () => {
             value={assignedTo}
             onChange={e => setAssignedTo(e.target.value)}
           />
-        </div> */}
-
+        </div>
 
         <div className='form-group type'>
           <label htmlFor='type'>Type</label>

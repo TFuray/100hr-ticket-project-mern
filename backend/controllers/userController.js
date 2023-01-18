@@ -81,16 +81,16 @@ const generateToken = (id) => {
 
 // // @desc   Get all users
 // // @route  Get/api/users
-const getUsers = asyncHandler(async (req, res) => {
-  const userList = await User.find()
-  console.log(userList)
-  res.status(200)
-})
+// const getUsers = asyncHandler(async (req, res) => {
+//   const userList = await User.find()
+//   console.log(userList)
+//   res.status(200)
+// })
 
 
 module.exports = {
   registerUser,
   loginUser,
   getMe,
-  getUsers
+  
 }

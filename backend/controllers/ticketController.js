@@ -1,17 +1,19 @@
 const asyncHandler = require('express-async-handler')
 const Ticket = require('../models/ticketModel')
-const User = require('../models/userModel')
+// const User = require('../models/userModel')
 
 // @desc    Get tickets
 // @route   GET /api/tickets
 const getTickets = asyncHandler(async (req, res) => {
-  // const users = await User.find()
   const tickets = await Ticket.find()
+  // const users = await User.find()
+
   // const tickets = await Ticket.find({ user: req.user.id })
   // console.log(users)
 
   res.status(200).json(tickets)
 })
+
 
 // @desc    Set tickets
 // @route   POST /api/tickets
