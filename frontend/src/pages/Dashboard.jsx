@@ -46,7 +46,7 @@ const Dashboard = () => {
           color={showTicketForm ? 'red' : 'green'}
           text={showTicketForm ? 'Close' : 'Add Ticket'}
           onClick={() => setShowTicketForm(!showTicketForm)}
-          />
+        />
       </section>
 
       {showTicketForm && <TicketForm />}
@@ -54,13 +54,28 @@ const Dashboard = () => {
       <section className='content'>
         <h2>Open Tickets: All</h2>
         {tickets.length > 0 ? (
-          <div className="goals">
-            {tickets.map((ticket) => (
+          <div className='goals'>
+            {tickets.map(ticket => (
               <TicketItem key={ticket._id} ticket={ticket} />
             ))}
-         </div>
-        ) : (<h3>No Open Tickets</h3>)}
+          </div>
+        ) : (
+          <h3>No Open Tickets</h3>
+        )}
       </section>
+
+      {/* <section className='content'>
+        <h2>Open Tickets: All</h2>
+        {tickets.length > 0 ? (
+          <div className='goals'>
+            {tickets.map(ticket => (
+              <TicketItem key={ticket._id} ticket={ticket} />
+            ))}
+          </div>
+        ) : (
+          <h3>No Open Tickets</h3>
+        )}
+      </section> */}
     </>
   )
 }

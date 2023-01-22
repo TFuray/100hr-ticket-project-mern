@@ -243,7 +243,9 @@ h3 {
   height: 111px;
  }
 
-
+h2{
+  margin-bottom: 0;
+}
 
  div.form-group{
   margin-bottom: 0;
@@ -252,4 +254,16 @@ h3 {
  label{
   position: absolute;
   left: 999999px;
+ }
+
+ h5{
+  font-weight: 500;
+ }
+ .date {
+  font-size: 10px;
+  display: flex;
+ }
+
+ p{
+  font-weight: 500;
  }
